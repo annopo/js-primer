@@ -38,3 +38,10 @@ for (let i = 0; i < numbers.length; i++) {
     }
 }
 console.log(isEvenIncluded);
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+
+const array2 = [1, 5, 10, 15, 20];
+console.log(array2.filter(isEven));
