@@ -22,3 +22,4 @@ const obj3 = {
 };
 delete obj3.key1;
 console.log(obj3);
+
