@@ -30,3 +30,12 @@ console.log(x);
 // foo変数うのスコープ外
 console.log(typeof foo === "undefined");
 
+const a = 10;
+function printA() {
+    console.log(a);
+}
+function run() {
+    const a = 20;
+    printA();
+}
+run();
