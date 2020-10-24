@@ -62,3 +62,23 @@ const arrayWrapperA = new ArrayWrapper([1, 2, 3]);
 const arrayWrapperB = ArrayWrapper.of(1, 2, 3);
 console.log(arrayWrapperA.length);
 console.log(arrayWrapperB.length);
+
+
+
+class Parent {
+    constructor() {
+        this.name = "Parent";
+    }
+}
+class Child extends Parent {
+    constructor() {
+        // 子クラスでは`super()`を`this`に触る前に呼び出さないといけない
+        super();
+        // 親クラスで書き込まれたnameは上書きされる
+        this.name = "Child";
+    }
+}
+const parent = new Parent();
+console.log(parent.name);
+const child = new Child();
+console.log(child.name);
