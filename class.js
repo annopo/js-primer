@@ -82,3 +82,9 @@ const parent = new Parent();
 console.log(parent.name);
 const child = new Child();
 console.log(child.name);
+
+console.log(parent instanceof Parent);
+console.log(parent instanceof Child);
+console.log(child instanceof Parent);
+console.log(child instanceof Child);
+

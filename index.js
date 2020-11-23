@@ -1,2 +1,1 @@
-const total = 42 + 42;
-console.log(total); // => 84
+console.log("index.js: loaded");
