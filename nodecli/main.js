@@ -1,7 +1,7 @@
 // console.log(process.argv);
 
 // my-module.jsモジュールをmyModuleオブジェクトとしてインポートする
-const myModule = require("./my-module");
+// const myModule = require("./my-module");
 // console.log(myModule.foo); // => "foo"
 
 // commanderモジュールをprogramオブジェクトとしてインポートする
@@ -10,10 +10,10 @@ const program = require("commander");
 // fsモジュールをfsオブジェクトとしてインポートする
 const fs = require("fs");
 
-// markedモジュールをmarkedオブジェクトとしてインポートする
-const marked = require("marked");
+// md2htmlモジュールをインポートする
+const md2html = require("./md2html");
 
-// コマンドライン引数からファイルパスを取得する
+program.option("--gfm", "GFMを有効にする");
 program.parse(process.argv);
 const filePath = program.args[0];
 
@@ -33,8 +33,6 @@ fs.readFile(filePath, { encoding: "utf8" }, (err, file) => {
     }
     // MarkdownファイルをHTML文字列に変換する
     // gfmオプションを無効にする
-    const html = marked(file, {
-        gfm: cliOptions.gfm,
-    });
+    const html = marked(file, cliOptions);
     console.log(html);
 });
